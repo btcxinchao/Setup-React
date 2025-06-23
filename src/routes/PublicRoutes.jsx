@@ -1,12 +1,12 @@
-import LayoutDefault from "../components/layouts/LayouDefault/LayoutDefault";
-import Contact from "../pages/Contact/Contact";
-import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
-
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
+import LayoutDefault from "../components/LayoutDefault";
+// các routes không cần đăng nhập
 export const PublicRoutes = [
   {
     path : "/",
-    element: <LayoutDefault/>,
+    element: <LayoutDefault />,
     children : [
       {
         index: true,
@@ -17,9 +17,10 @@ export const PublicRoutes = [
         element : <Login />
       },
       {
-         path : "Contact",
-         element : <Contact />
-      }
+        path : "signup",
+        element : <SignUp />
+      },
+      
       // những routes khác 
     ]
   }

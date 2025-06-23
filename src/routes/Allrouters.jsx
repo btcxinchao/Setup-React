@@ -1,11 +1,12 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 // import PrivateRoutes from './PrivateRoutes'
-import {PublicRoutes} from "./PublicRoutes"
+import { PublicRoutes } from "./PublicRoutes"
+import { PrivateRoutes } from "./PrivateRoutes"
 
 const Allrouters = () => {
-  // dùng useRoutes để sử dụng routes riêng or có thể dùng router bọc routes trực tiếp tại App()
-    const routes = useRoutes(PublicRoutes);
+  // Kết hợp cả public và private routes
+  const routes = useRoutes([...PublicRoutes, ...PrivateRoutes]);
   return (
     <div>
       {routes}
